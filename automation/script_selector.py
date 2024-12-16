@@ -28,9 +28,14 @@ def list_available_scripts(directory: str) -> List[str]:
         List[str]: A list of script names.
     """
     try:
-        return [file for file in os.listdir(directory) if file.endswith('.py')]
+        files = os.listdir(directory)
+        print(f"Debug: Files in '{directory}': {files}")
+        return [file for file in files if file.endswith('.py')]
     except FileNotFoundError:
+        print(f"Debug: Directory '{directory}' not found.")
         return []
+
+
 
 if __name__ == "__main__":
     # Example usage
