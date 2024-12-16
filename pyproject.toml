@@ -1,0 +1,29 @@
+[tool.poetry]
+name = "agi"
+version = "0.1.0"
+description = "A scalable autonomous agent framework that is able to reason and has advanced capabilities and access to resources."
+authors = ["Pablo Martinez Pancorbo <pablomartinezpancorbo@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+flask = "^3.1.0"
+openai = "^1.57.4"
+langchain = "^0.3.12"
+transformers = "^4.47.0"
+numpy = "^2.2.0"
+pandas = "^2.2.3"
+sympy = "^1.13.3"
+matplotlib = "^3.10.0"
+scikit-learn = "^1.6.0"
+requests = "^2.32.3"
+pytest = "^8.3.4"
+flake8 = "^7.1.1"
+mypy = "^1.13.0"
+black = "^24.10.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
