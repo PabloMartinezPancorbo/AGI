@@ -4,7 +4,7 @@ from core.goal_optimizer import optimize_goals
 from knowledge_modules.llm_knowledge import extract_knowledge
 from automation.script_selector import execute_script_safe
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='static')
 
 @app.route('/')
 def home():

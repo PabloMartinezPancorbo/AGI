@@ -130,7 +130,7 @@ Welcome to the AGI (Artificial General Intelligence) Project, an innovative fram
 
 ### Prerequisites
 
-- Python 3.8 or later
+- Python 3.12 or later
 - Virtual environment (recommended)
 - Required libraries listed in `requirements.txt`
 
@@ -172,10 +172,18 @@ python ui/cli_interface.py --list
 The web interface, powered by Flask, provides a user-friendly way to interact with AGI modules.
 
 ```bash
-python ui/web_interface.py
+python main.py
 ```
 
 Navigate to `http://127.0.0.1:5000` in your browser.
+
+You can also query the knowledge module by sending a POST request with a question. For example:
+
+```bash
+curl -X POST http://127.0.0.1:5000/knowledge -H "Content-Type: application/json" -d '{"query": "What is AI?"}'
+```
+
+This will return a JSON response containing the answer extracted from the integrated LLM pipeline.
 
 ---
 

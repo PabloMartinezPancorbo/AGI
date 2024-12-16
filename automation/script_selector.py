@@ -1,5 +1,6 @@
 import os
-from typing import List
+import subprocess
+from typing import List, Tuple
 
 def select_script(scripts: List[str], criteria: str) -> str:
     """
@@ -36,6 +37,26 @@ def list_available_scripts(directory: str) -> List[str]:
         return []
 
 
+def execute_script_safe(script_path: str, commands: List[str]) -> Tuple[str, str]:
+    """
+    Execute a script safely and capture its output and error.
+
+    Args:
+        script_path (str): Path to the script to execute.
+        commands (List[str]): Additional commands or arguments to pass.
+
+    Returns:
+        Tuple[str, str]: A tuple of (stdout, stderr) outputs from the execution.
+    """
+    try:
+        result = subprocess.run(
+            ["python", script_path, *commands],
+            capture_output=True,
+            text=True
+        )
+        return result.stdout, result.stderr
+    except Exception as e:
+        return "", str(e)
 
 if __name__ == "__main__":
     # Example usage
