@@ -143,7 +143,29 @@ Welcome to the AGI (Artificial General Intelligence) Project, an innovative fram
    cd AGI
    ```
 
-2. Create and activate a virtual environment:
+2. **Option 1: Using Poetry (Recommended)**
+
+   Poetry simplifies dependency management and ensures a clean environment. Install Poetry if not already available:
+
+   ```bash
+   pip install poetry
+   ```
+
+   Then, install dependencies:
+
+   ```bash
+   poetry install
+   ```
+
+   Activate the virtual environment created by Poetry:
+
+   ```bash
+   poetry shell
+   ```
+
+3. **Option 2: Using pip**
+
+   Create and activate a virtual environment:
 
    ```bash
    python3 -m venv venv
@@ -151,7 +173,7 @@ Welcome to the AGI (Artificial General Intelligence) Project, an innovative fram
    .\venv\Scripts\activate  # For Windows
    ```
 
-3. Install dependencies:
+   Install dependencies:
 
    ```bash
    pip install -r requirements.txt
